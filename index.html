@@ -1,0 +1,72 @@
+<html>
+<head>
+    
+    <script>
+        
+        function check(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const error = document.getElementById('error');
+
+            if (email === "ebrahim@gmail.com" && password === "1234") {
+                alert("Login successful!");
+                error.style.display = "none";
+                window.location.href="Home.html";
+            } else {
+                error.textContent = "Invalid email or password. Please try again.";
+                error.style.display = "block";
+            }
+        }
+    </script>
+    <title>Sign In</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            
+        }
+        .container {
+            background: #ffffff11;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            
+        }
+        button:hover {
+            background: #0056b3;
+        }
+       
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+        <div id="error" class="error"></div>
+        <form id="form" onsubmit="check(event)">
+           Email: <input type="email" id="email"  required>
+           password: <input type="password" id="password" required>
+            <button type="submit">Sign In</button><br>
+            
+        </form>
+    </div>
+</body>
+</html>
+
